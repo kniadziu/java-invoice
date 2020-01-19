@@ -16,15 +16,15 @@ public class Invoice {
 		// TODO: implement
 	}
 
-	public BigDecimal getSubtotal() {
-		return null;
+	public BigDecimal getNetPrice() {
+		return BigDecimal.ZERO;
 	}
 
 	public BigDecimal getTax() {
-		return null;
+		return BigDecimal.ZERO;
 	}
 
-	public BigDecimal getTotal() {
-		return null;
+	public BigDecimal getGrossPrice() {
+		return BigDecimal.ZERO;
 	}
 }
