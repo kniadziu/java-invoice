@@ -16,6 +16,9 @@ public abstract class Product {
 			throw new IllegalArgumentException("Nazwa produktu nie może być null.");
 		}
 		this.name = name;
+		if (price==null || price.compareTo(new BigDecimal("0"))< 0) {
+			throw new IllegalArgumentException("Cena produktu nie może być null.");
+		}
 		this.price = price;
 		this.taxPercent = tax;
 	}
