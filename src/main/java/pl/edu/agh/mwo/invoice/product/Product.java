@@ -10,6 +10,10 @@ public abstract class Product {
 	private final BigDecimal taxPercent;
 
 	protected Product(String name, BigDecimal price, BigDecimal tax) {
+		//walidujemy czy parametry sa poprawne wg deomeny, gdzie sa implementowane, czy moga byc null
+		if (name==null){
+			throw new IllegalArgumentException("Nazwa produktu nie może być null.");
+		}
 		this.name = name;
 		this.price = price;
 		this.taxPercent = tax;
