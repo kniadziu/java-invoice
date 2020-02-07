@@ -18,7 +18,13 @@ public class Invoice {
 	}
 
 	public void addProduct(Product product, Integer quantity) { //konstruktor zwraza produkt i jego ilsc
+		//walidujemy czy parametry sa poprawne dla quantity =0
+		if (quantity <=0){ //sprawdzenie quantity jest zero lub mniejsze
+			throw new IllegalArgumentException("Ilośc nie może być zero.");
+		}
+		
 		this.products.put(product,quantity);
+
 	}
 
 	public BigDecimal getNetPrice() {
