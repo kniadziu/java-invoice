@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public class FuelCanisterProduct extends Product {
 
-    public FuelCanisterProduct(String name, BigDecimal price, BigDecimal tax) {
-        super(name, price,  tax);
+    public FuelCanisterProduct(String name, BigDecimal price) {
+        super(name, price,  BigDecimal.ZERO);
     }
 }

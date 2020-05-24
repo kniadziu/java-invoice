@@ -132,4 +132,14 @@ public class InvoiceTest {
 		int number2 = new Invoice().getNumber();
 		Assert.assertThat(number1, Matchers.lessThan(number2));
 	}
+
+	@Test
+	public void checkIfDuplicatingProductOnInvoice() { // sprawdza, czy dodaje ten sam produkt do jednej pozycji
+		Product p = new OtherProduct("chleb", new BigDecimal("5.30"));
+		invoice.addProduct(p, 1);
+		invoice.addProduct(p, 2);
+		Assert.assertEquals(1, invoice.getQuantityProducts());
+		invoice.print();
+	}
+
 }

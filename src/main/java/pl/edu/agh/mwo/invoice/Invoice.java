@@ -63,7 +63,7 @@ public class Invoice {
 		return sum;
 	}
 
-	public void print(){
+	public int print(){
 		int lp=0;
 		System.out.println("Faktura  nr: " + getNumber());
 		System.out.println("-------------------------------------------------");
@@ -74,8 +74,18 @@ public class Invoice {
 			System.out.printf(" %2s | %-20s | %5s | %10s |\n",lp, product. getName(),  products.get(product) , product.getPriceWithTax());
 		}
 		System.out.println("-------------------------------------------------\n");
-
+ 		return lp;
 	}
+
+
+	public int getQuantityProducts(){
+		int quantity=0;
+		for (Product product : products.keySet()){
+			quantity++;
+	}
+		return quantity;
+	}
+
 
 	public BigDecimal getGrossTotal() {
 		BigDecimal totalGross = BigDecimal.ZERO;
@@ -85,6 +95,8 @@ public class Invoice {
 		}
 		return totalGross;
 	}
+
+
 
 	public BigDecimal getNetTotal() {
 		BigDecimal totalNet = BigDecimal.ZERO;
@@ -97,5 +109,7 @@ public class Invoice {
 	public BigDecimal getTaxTotal() {
 		return getGrossTotal().subtract(getNetTotal());
 	}
+
+
 
 }
