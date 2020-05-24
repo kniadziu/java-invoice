@@ -30,6 +30,8 @@ public class ProductTest {
 		Assert.assertThat(new BigDecimal("50.0"), Matchers.comparesEqualTo(product.getPrice()));
 		Assert.assertThat(new BigDecimal("50.0"), Matchers.comparesEqualTo(product.getPriceWithTax()));
 	}
+///
+	//
 
 
 	@Test
