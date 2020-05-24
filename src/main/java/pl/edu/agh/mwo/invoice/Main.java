@@ -5,6 +5,8 @@ import pl.edu.agh.mwo.invoice.product.OtherProduct;
 
 import java.math.BigDecimal;
 
+
+//MAIN
 public class Main {
     public static void main(String[] args) {
             Invoice fv1 = new Invoice();

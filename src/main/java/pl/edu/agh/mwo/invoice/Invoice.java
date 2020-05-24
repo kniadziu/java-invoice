@@ -63,6 +63,7 @@ public class Invoice {
 		return sum;
 	}
 
+	//DRKOWANIE FAKTURY
 	public int print(){
 		int lp=0;
 		System.out.println("Faktura  nr: " + getNumber());

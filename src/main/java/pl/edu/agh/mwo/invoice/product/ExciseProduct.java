@@ -3,7 +3,7 @@ package pl.edu.agh.mwo.invoice.product;
 import java.math.BigDecimal;
 
 public class ExciseProduct extends Product {
-
+//
  private BigDecimal excise = new BigDecimal("5.56");
 
     public ExciseProduct(String name, BigDecimal price) {

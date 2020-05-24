@@ -4,7 +4,7 @@ import java.math.BigDecimal; //bigDecimal stosuje się do obliczeń pieniędzy z
 
 public abstract class Product {
 	private final String name;
-
+//
 	private final BigDecimal price;
 
 	private final BigDecimal taxPercent;
