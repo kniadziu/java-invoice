@@ -9,8 +9,8 @@ public abstract class Product {
     private final BigDecimal taxPercent;
 
     protected Product(String name, BigDecimal price, BigDecimal tax) {
-        //		walidujemy czy parametry sa poprawne wg domeny, gdzie sa
-        // 		implementowane, czy moga byc null
+        // walidujemy czy parametry sa poprawne wg domeny, gdzie sa
+        // implementowane, czy moga byc null
         if (name == null || name.isEmpty()) { //sprawdzenie czy nazwa jest pusta lub null,
             // kolejnosc jest wazna, bo po 1 sprawdzeniu juz nie sprawdza dalej
             throw new IllegalArgumentException("Nazwa produktu nie może być null.");
