@@ -20,6 +20,7 @@ public class ProductTest {
 		Assert.assertThat(new BigDecimal("12.30"), Matchers.comparesEqualTo(product.getPriceWithTax()));
 	}
 
+///
 
 	//CANISTER TEST
 	@Test
