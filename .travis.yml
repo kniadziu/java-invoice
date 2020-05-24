@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 language: java
 script:
   - mvn checkstyle:check
+=======
+language: java
+script:
+  - mvn checkstyle:check
+>>>>>>> ed46a500f158411d68a1bbb221145d36677cca5c
   - mvn test
