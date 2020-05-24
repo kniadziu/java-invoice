@@ -3,6 +3,7 @@ package pl.edu.agh.mwo.invoice;
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
+
 import pl.edu.agh.mwo.invoice.product.Product;
 
 public class Invoice {
@@ -11,6 +12,7 @@ public class Invoice {
 
     private static Integer nextNumber = 0;
     private Integer number = ++nextNumber;
+
     public Integer getNumber() {
         return number;
     }
@@ -58,7 +60,7 @@ public class Invoice {
         return sum;
     }
 
-//  DRKOWANIE FAKTURY
+    //  DRKOWANIE FAKTURY
     public int print() {
         int lp = 0;
         System.out.println("Faktura  nr: " + getNumber());
@@ -73,7 +75,6 @@ public class Invoice {
         return lp;
     }
 
-
     public int getQuantityProducts() {
         int quantity = 0;
         for (Product product : products.keySet()) {
@@ -81,7 +82,6 @@ public class Invoice {
         }
         return quantity;
     }
-
 
     public BigDecimal getGrossTotal() {
         BigDecimal totalGross = BigDecimal.ZERO;
@@ -91,7 +91,6 @@ public class Invoice {
         }
         return totalGross;
     }
-
 
     public BigDecimal getNetTotal() {
         BigDecimal totalNet = BigDecimal.ZERO;
