@@ -9,7 +9,7 @@ public abstract class Product {
 
 	private final BigDecimal taxPercent;
 
-	protected Product(String name, BigDecimal price, BigDecimal tax) {
+	protected Product(String name,  BigDecimal price, BigDecimal tax) {
 		//walidujemy czy parametry sa poprawne wg deomeny, gdzie sa implementowane, czy moga byc null
 		if (name==null || name.isEmpty()){ //sprawdzenie czy nazwa jest pusta lub null, kolejnosc jest 
 			                               //wazna, bo po 1 sprawdzeniu juz nie sprawdza dalej
@@ -36,6 +36,7 @@ public abstract class Product {
 	}
 
 	public BigDecimal getPriceWithTax() {
+
 		return this.price.add(this.taxPercent.multiply(this.price));
 	}
 }

@@ -7,9 +7,20 @@ import java.util.Map;
 import pl.edu.agh.mwo.invoice.product.Product;
 
 public class Invoice {
+
 	private Map<Product, Integer> products = new HashMap<>();
-	
-	
+
+	private static Integer nextNumber=0;
+	private Integer number=++nextNumber; //nr faktury
+
+	public Integer getNumber() {
+		return number;
+	}
+
+	public void setNumber(Integer number) {
+		this.number = number;
+	}
+
 	//private Collection<Product> products;
 
 	public void addProduct(Product product) { //konstruktor z nazwa zwraz=ca 1 produkt
@@ -47,5 +58,11 @@ public class Invoice {
 			sum= sum.add(product.getPriceWithTax().multiply(new BigDecimal(quantity)));
 		}
 		return sum;
+	}
+
+	public void print(){
+		System.out.println("Faktura  nr: " + getNumber());
+		System.out.println("--------------------------------------------------");
+
 	}
 }
