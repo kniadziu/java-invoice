@@ -33,9 +33,12 @@ public class Invoice {
 		if (quantity <=0){ //sprawdzenie quantity jest zero lub mniejsze
 			throw new IllegalArgumentException("Ilośc nie może być zero.");
 		}
-		
-		this.products.put(product,quantity);
-
+		//jesli dodajesz ten sam produkt do fv to zwieksz liczbe pozycji
+		if (products.containsKey(product)) {
+			products.put(product, products.get(product) + quantity);
+		} else {
+			products.put(product, quantity);
+		}
 	}
 
 	public BigDecimal getNetPrice() {
@@ -61,8 +64,16 @@ public class Invoice {
 	}
 
 	public void print(){
+		int lp=0;
 		System.out.println("Faktura  nr: " + getNumber());
-		System.out.println("--------------------------------------------------");
+		System.out.println("-------------------------------------------------");
+		System.out.printf("%2s | %-20s | %5s | %10s |", "Lp.","Nazwa produktu", "Ilość" , "Cena  ");
+		System.out.println("\n-------------------------------------------------");
+		for (Product product : products.keySet()){
+			lp++;
+			System.out.printf(" %2s | %-20s | %5s | %10s |\n",lp, product. getName(),  products.get(product) , product.getPriceWithTax());
+		}
+		System.out.println("-------------------------------------------------\n");
 
 	}
 }
