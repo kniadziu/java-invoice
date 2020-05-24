@@ -3,7 +3,6 @@ package pl.edu.agh.mwo.invoice;
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
-
 import pl.edu.agh.mwo.invoice.product.Product;
 
 public class Invoice {
@@ -25,12 +24,12 @@ public class Invoice {
         this.products.put(product, 1);
     }
 
-    public void addProduct(Product product, Integer quantity) { //konstruktor zwraza produkt i jego ilsc
-//      walidujemy czy parametry sa poprawne dla quantity =0
+    public void addProduct(Product product, Integer quantity) {
+        // walidujemy czy parametry sa poprawne dla quantity =0
         if (quantity <= 0) { //sprawdzenie quantity jest zero lub mniejsze
             throw new IllegalArgumentException("Ilośc nie może być zero.");
         }
-//      jesli dodajesz ten sam produkt do fv to zwieksz liczbe pozycji
+        // jesli dodajesz ten sam produkt do fv to zwieksz liczbe pozycji
         if (products.containsKey(product)) {
             products.put(product, products.get(product) + quantity);
         } else {
@@ -65,11 +64,13 @@ public class Invoice {
         int lp = 0;
         System.out.println("Faktura  nr: " + getNumber());
         System.out.println("-------------------------------------------------");
-        System.out.printf("%2s | %-20s | %5s | %10s |", "Lp.", "Nazwa produktu", "Ilość", "Cena jedn.");
+        System.out.printf("%2s | %-20s | %5s | %10s |", "Lp.",
+                        "Nazwa produktu", "Ilość", "Cena jedn.");
         System.out.println("\n-------------------------------------------------");
         for (Product product : products.keySet()) {
             lp++;
-            System.out.printf(" %2s | %-20s | %5s | %10s |\n", lp, product.getName(), products.get(product), product.getPriceWithTax());
+            System.out.printf(" %2s | %-20s | %5s | %10s |\n",
+                    lp, product.getName(), products.get(product), product.getPriceWithTax());
         }
         System.out.println("-------------------------------------------------\n");
         return lp;
